@@ -33,7 +33,7 @@ class Redis
 
       if defined?(Encoding::default_external)
         def encode(string)
-          string.force_encoding(Encoding::default_external)
+          string.force_encoding(Encoding::default_external).encode(Encoding::default_external)
         end
       else
         def encode(string)
